@@ -1,4 +1,4 @@
-FROM bde2020/hadoop-submit:1.2.1-hadoop2.8-java8
+FROM ivcinform/hadoop-submit:1.2.1-hadoop2.8-java8
 MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
 
 

@@ -7,7 +7,7 @@ nginx:
     - "8080:80"
 
 namenode:
-  image: bde2020/hadoop-namenode:1.0.0
+  image: ivcinform/hadoop-namenode:1.0.0
   hostname: namenode
   container_name: namenode
   domainname: hadoop
@@ -20,7 +20,7 @@ namenode:
     - ./hadoop.env
 
 resourcemanager:
-  image: bde2020/hadoop-resourcemanager:1.0.0
+  image: ivcinform/hadoop-resourcemanager:1.0.0
   hostname: resourcemanager
   container_name: resourcemanager
   domainname: hadoop
@@ -29,7 +29,7 @@ resourcemanager:
     - ./hadoop.env
 
 historyserver:
-  image: bde2020/hadoop-historyserver:1.0.0
+  image: ivcinform/hadoop-historyserver:1.0.0
   hostname: historyserver
   container_name: historyserver
   domainname: hadoop
@@ -40,7 +40,7 @@ historyserver:
     - ./hadoop.env
 
 nodemanager1:
-  image: bde2020/hadoop-nodemanager:1.0.0
+  image: ivcinform/hadoop-nodemanager:1.0.0
   hostname: nodemanager1
   container_name: nodemanager1
   domainname: hadoop
@@ -49,7 +49,7 @@ nodemanager1:
     - ./hadoop.env
 
 datanode1:
-  image: bde2020/hadoop-datanode:1.0.0
+  image: ivcinform/hadoop-datanode:1.0.0
   hostname: datanode1
   container_name: datanode1
   domainname: hadoop
@@ -60,7 +60,7 @@ datanode1:
     - ./hadoop.env
 
 datanode2:
-  image: bde2020/hadoop-datanode:1.0.0
+  image: ivcinform/hadoop-datanode:1.0.0
   hostname: datanode2
   container_name: datanode2
   domainname: hadoop
