@@ -1,6 +1,6 @@
 # Changes
 
-Version 1.1.0 introduces healthchecks for the containers.
+Version 1.2.1 introduces healthchecks for the containers.
 
 # Hadoop Docker
 
