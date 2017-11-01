@@ -1,4 +1,4 @@
-FROM ivcinform/java-sdk:1.8.0.144-b01
+FROM ivcinform/java-sdk:1.8.0.151-b12
 MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 
 ENV ENABLE_INIT_DAEMON true
