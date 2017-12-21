@@ -33,7 +33,7 @@ If you overwrite the template's `CMD` in your Dockerfile, make sure to execute t
 
 #### Example Dockerfile
 ```
-FROM ivcinform/hadoop-maven-template:1.2.1-hadoop2.8.2-java8
+FROM ivcinform/hadoop-maven-template:1.2.1-hadoop2.8.3-java8
 
 MAINTAINER Andrey.Yudin <info@ivc-inform.ru>
 
