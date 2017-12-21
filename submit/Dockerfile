@@ -1,4 +1,4 @@
-FROM ivcinform/hadoop-base:1.2.1-hadoop2.8.2-java8
+FROM ivcinform/hadoop-base:1.2.1-hadoop2.9.0-java8
 MAINTAINER Andrey.Yudin <info@ivc-inform.ru>
 
 ENV JAR_FILEPATH="/opt/hadoop/applications/application.jar"
