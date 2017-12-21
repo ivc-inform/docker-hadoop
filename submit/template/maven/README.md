@@ -35,7 +35,7 @@ If you overwrite the template's `CMD` in your Dockerfile, make sure to execute t
 ```
 FROM ivcinform/hadoop-maven-template:1.2.1-hadoop2.8.1-java8
 
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+MAINTAINER Andrey.Yudin <info@ivc-inform.ru>
 
 ENV JAR_FILEPATH="my-app-1.0-SNAPSHOT-with-dependencies.jar"
 ENV CLASS_TO_RUN="my.main.Application"

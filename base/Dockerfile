@@ -1,5 +1,5 @@
 FROM ivcinform/java-sdk:1.8.0.151-b12
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+MAINTAINER Andrey.Yudin <info@ivc-inform.ru>
 
 ENV ENABLE_INIT_DAEMON true
 ENV INIT_DAEMON_BASE_URI http://identifier/init-daemon
