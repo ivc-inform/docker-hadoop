@@ -1,5 +1,5 @@
-FROM ivcinform/hadoop-base:1.2.1-hadoop3.0-java8
-MAINTAINER Andrey Yudin <info@ivc-inform.ru>
+FROM ivcinform/hadoop-base:1.2.1-hadoop2.8-java8
+MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
 
 HEALTHCHECK CMD curl -f http://localhost:50075/ || exit 1
 
