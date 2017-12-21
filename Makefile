@@ -10,7 +10,6 @@ wordcount:
 	docker run --network hadoop --env-file ./hadoop.env --restart on-failure:5 ivcinform/hadoop-base:1.2.1-hadoop2.8.1-java8 hdfs dfs -rm -r /input
 
 build-local:
- docker build --no-cache -t ivcinform/hadoop-wordcount ./submit
 	docker build --no-cache -t ivcinform/hadoop-base:1.2.1-hadoop2.8.1-java8 ./base
 	docker build --no-cache -t ivcinform/hadoop-namenode:1.2.1-hadoop2.8.1-java8 ./namenode
 	docker build --no-cache -t ivcinform/hadoop-datanode:1.2.1-hadoop2.8.1-java8 ./datanode
