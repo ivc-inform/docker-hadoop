@@ -12,7 +12,7 @@ Version 1.1.0 introduces healthchecks for the containers.
 
 To deploy an example HDFS cluster, run:
 ```
-  docker-compose up
+  docker-compose up -d --build
 ```
 
 The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
