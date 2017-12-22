@@ -20,7 +20,7 @@ RUN set -x \
     && rm /tmp/hadoop.tar.gz*
 
 RUN ln -s /opt/hadoop-$HADOOP_VERSION/etc/hadoop /etc/hadoop
-RUN cp /etc/hadoop/mapred-site.xml.template /etc/hadoop/mapred-site.xml
+#RUN cp /etc/hadoop/mapred-site.xml.template /etc/hadoop/mapred-site.xml
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
 
 RUN mkdir /hadoop-data
