@@ -1,7 +1,7 @@
 DOCKER_NETWORK = hadoop
 ENV_FILE = ./hadoop.env
 
-build-local:
+build:
 	docker build --no-cache -t ivcinform/hadoop-base:1.2.1-hadoop3.0.0-java8 ./base
 	docker build --no-cache -t ivcinform/hadoop-namenode:1.2.1-hadoop3.0.0-java8 ./namenode
 	docker build --no-cache -t ivcinform/hadoop-datanode:1.2.1-hadoop3.0.0-java8 ./datanode
