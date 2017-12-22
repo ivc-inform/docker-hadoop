@@ -3,9 +3,9 @@ services:
    namenode:
       image: ivcinform/hadoop-hdfs-namenode:latest
       hostname: namenode
-      ports:
-         - 50070:50070
+      ports:         
          - 9870:9870
+         - 9820:9820
       env_file:
         - ./compose-config
       environment:
