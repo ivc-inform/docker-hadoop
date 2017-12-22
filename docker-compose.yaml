@@ -5,7 +5,7 @@ services:
       hostname: namenode
       ports:
          - 50070:50070
-         - 9870:9870
+         - 9870:8020
       env_file:
         - ./compose-config
       environment:
