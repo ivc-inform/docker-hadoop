@@ -15,7 +15,7 @@ services:
       - CLUSTER_NAME=test
     ports:
       - "50070:50070"
-      - "8020:8020"
+      - "8020:9820"
 
     env_file:
       - ./hadoop.env
