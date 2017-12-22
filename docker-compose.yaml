@@ -1,7 +1,7 @@
 version: "2"
 services:
    namenode:
-      image: flokkr/hadoop-hdfs-namenode:latest
+      image: ivcinform/hadoop-hdfs-namenode:latest
       hostname: namenode
       ports:
          - 50070:50070
@@ -11,20 +11,20 @@ services:
       environment:
           ENSURE_NAMENODE_DIR: "/tmp/hadoop-hdfs/dfs/name"
    datanode:
-      image: flokkr/hadoop-hdfs-datanode:latest
+      image: ivcinform/hadoop-hdfs-datanode:latest
       links:
          - namenode
       env_file:
         - ./compose-config
    resourcemanager:
-      image: flokkr/hadoop-yarn-resourcemanager:latest
+      image: ivcinform/hadoop-yarn-resourcemanager:latest
       hostname: resourcemanager
       ports:
          - 8088:8088
       env_file:
         - ./compose-config
    nodemanager:
-      image: flokkr/hadoop-yarn-nodemanager:latest
+      image: ivcinform/hadoop-yarn-nodemanager:latest
       links:
          - resourcemanager
          - namenode
