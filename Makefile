@@ -1,25 +1,18 @@
+DOCKER_NETWORK = hadoop
+ENV_FILE = ./hadoop.env
 
-
-VERSION ?= latest
-URL ?= "https://www-eu.apache.org/dist/hadoop/common/hadoop-3.0.0/hadoop-3.0.0.tar.gz"
-
-build:
-	echo $(URL) > hadoop/url
-	docker build -t ivcinform/hadoop-runner:$(VERSION) runner
-	docker tag ivcinform/hadoop-runner:$(VERSION) ivcinform/hadoop-runner:build
-	docker build -t ivcinform/hadoop:$(VERSION) hadoop
-	docker tag ivcinform/hadoop:$(VERSION) ivcinform/hadoop:build
-	docker build -t ivcinform/hadoop-hdfs-namenode:$(VERSION) hdfs-namenode
-	docker build -t ivcinform/hadoop-hdfs-datanode:$(VERSION) hdfs-datanode
-	docker build -t ivcinform/hadoop-yarn-resourcemanager:$(VERSION) yarn-resourcemanager
-	docker build -t ivcinform/hadoop-yarn-nodemanager:$(VERSION) yarn-nodemanager
-
+build-local:
+	docker build --no-cache -t ivcinform/hadoop-base:1.2.1-hadoop3.0.0-java8 ./base
+	docker build --no-cache -t ivcinform/hadoop-namenode:1.2.1-hadoop3.0.0-java8 ./namenode
+	docker build --no-cache -t ivcinform/hadoop-datanode:1.2.1-hadoop3.0.0-java8 ./datanode
+	docker build --no-cache -t ivcinform/hadoop-nodemanager:1.2.1-hadoop3.0.0-java8 ./nodemanager
+	docker build --no-cache -t ivcinform/hadoop-resourcemanager:1.2.1-hadoop3.0.0-java8 ./resourcemanager
+	docker build --no-cache -t ivcinform/hadoop-historyserver:1.2.1-hadoop3.0.0-java8 ./historyserver
+	
 deploy:
-	docker push ivcinform/hadoop-runner:$(VERSION)
-	docker push ivcinform/hadoop:$(VERSION)
-	docker push ivcinform/hadoop-hdfs-namenode:$(VERSION)
-	docker push ivcinform/hadoop-hdfs-datanode:$(VERSION)
-	docker push ivcinform/hadoop-yarn-resourcemanager:$(VERSION)
-	docker push ivcinform/hadoop-yarn-nodemanager:$(VERSION)
-
-.PHONY: deploy build
+	docker push ivcinform/hadoop-base:1.2.1-hadoop3.0.0-java8
+ docker push ivcinform/hadoop-namenode:1.2.1-hadoop3.0.0-java8
+ docker push ivcinform/hadoop-datanode:1.2.1-hadoop3.0.0-java8
+ docker push ivcinform/hadoop-nodemanager:1.2.1-hadoop3.0.0-java8
+ docker push ivcinform/hadoop-resourcemanager:1.2.1-hadoop3.0.0-java8
+ docker push ivcinform/hadoop-historyserver:1.2.1-hadoop3.0.0-java8

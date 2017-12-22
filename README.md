@@ -1,48 +1,77 @@
-# Apache Hadoop docker images
+# Changes
 
-These images are part of the bigdata [docker image series](https://github.com/flokkr). All of the images use the same [base docker image](https://github.com/flokkr/docker-baseimage) which contains advanced configuration loading. 
+Version 1.2.1 introduces healthchecks for the containers.
 
-It supports configuration based on environment variables (using specific naming convention), downloaded from consul and other plugins (for example to generate kerberos keystabs).
+# Hadoop Docker
 
-For more detailed instruction to configure the images see the [README](https://github.com/flokkr/docker-base/blob/master/README.md) in the flokkr/docker-base repository.
-
-## Getting started
-
-### Run
-
-The easiest way to run a storm cluster is just use the included ```docker-compose.yaml``` file. 
-
-Checkout the repository and do a ```docker-compose up -d``` The storm UI will be available at http://localhost:8080
-
-You can adjust the settings in the compose-config file.
-
-To scale up datanode/namenode:
-
+To deploy an example HDFS cluster, run:
 ```
-docker-compose scale datanode=1
+  docker network create hadoop
+  docker-compose up -d --build    
+  
+  Usage: up [options] [--scale SERVICE=NUM...] [SERVICE...]
+  
+  Options:
+      -d                         Detached mode: Run containers in the background,
+                                 print new container names.
+                                 Incompatible with --abort-on-container-exit.
+      --no-color                 Produce monochrome output.
+      --no-deps                  Don't start linked services.
+      --force-recreate           Recreate containers even if their configuration
+                                 and image haven't changed.
+                                 Incompatible with --no-recreate.
+      --no-recreate              If containers already exist, don't recreate them.
+                                 Incompatible with --force-recreate.
+      --no-build                 Don't build an image, even if it's missing.
+      --build                    Build images before starting containers.
+      --abort-on-container-exit  Stops all containers if any container was stopped.
+                                 Incompatible with -d.
+      -t, --timeout TIMEOUT      Use this timeout in seconds for container shutdown
+                                 when attached or when containers are already
+                                 running. (default: 10)
+      --remove-orphans           Remove containers for services not defined in
+                                 the Compose file
+      --exit-code-from SERVICE   Return the exit code of the selected service container.
+                                 Implies --abort-on-container-exit.
+      --scale SERVICE=NUM        Scale SERVICE to NUM instances. Overrides the `scale`
+                                 setting in the Compose file if present.
+  
 ```
 
-To check namenode/resourcemanager use the published ports:
-
-* Resourcemanager: http://localhost:8080
-* Namenode: http://localhost:50070 (in case of hadoop 2.x)
-
-### Smoketest
-
+The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
 ```
-docker-compose exec resourcemanager /opt/hadoop/bin/yarn jar /opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.1.jar pi 16 1000
+  CORE_CONF_fs_defaultFS=hdfs://namenode:8020
+```
 
-### Cluster
+CORE_CONF corresponds to core-site.xml. fs_defaultFS=hdfs://namenode:8020 will be transformed into:
+```
+  <property><name>fs.defaultFS</name><value>hdfs://namenode:8020</value></property>
+```
+To define dash inside a configuration parameter, use double underscore, such as YARN_CONF_yarn_log___aggregation___enable=true (yarn-site.xml):
+```
+  <property><name>yarn.log-aggregation-enable</name><value>true</value></property>
+```
 
-For more detailed examples check the other repositories under the flokkr organization with [runtime-](https://github.com/search?q=org%3Aflokkr+runtime) prefix.
+The available configurations are:
+* /etc/hadoop/core-site.xml CORE_CONF
+* /etc/hadoop/hdfs-site.xml HDFS_CONF
+* /etc/hadoop/yarn-site.xml YARN_CONF
+* /etc/hadoop/httpfs-site.xml HTTPFS_CONF
+* /etc/hadoop/kms-site.xml KMS_CONF
+* /etc/hadoop/mapred-site.xml MAPRED_CONF
 
-There are more detailed examples with using:
+If you need to extend some other configuration file, refer to base/entrypoint.sh bash script.
 
-* [docker-compose](https://github.com/flokkr/runtime-compose) (single-host)
-* [docker-swarm](https://github.com/flokkr/runtime-swarm)
-* [consul and docker-compose](https://github.com/flokkr/runtime-consul)  (multi-host)
-* [consul and nomad](https://github.com/flokkr/runtime-nomad) (multi-host)
-* [kubernetes](https://github.com/flokkr/runtime-kubernetes)
+After starting the example Hadoop cluster, you should be able to access interfaces of all the components (substitute domain names by IP addresses from ```network inspect hadoop``` command):
+* Namenode: http://localhost:50070/dfshealth.html#tab-overview
+* History server: http://localhost:8188/applicationhistory
+* Datanode: http://localhost:50075/
+* Nodemanager: http://localhost:8042/node
+* Resource manager: http://localhost:8088/
 
-
-
+# Running example MapReduce job
+To run example map reduce job on the Hadoop cluster run:
+```
+make wordcount
+```
+See Makefile and [submit docker image](./submit/Dockerfile) for more details.
