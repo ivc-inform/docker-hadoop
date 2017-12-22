@@ -19,7 +19,7 @@ You can adjust the settings in the compose-config file.
 To scale up datanode/namenode:
 
 ```
-docker-compose scale datanode=3
+docker-compose scale datanode=1
 ```
 
 To check namenode/resourcemanager use the published ports:
