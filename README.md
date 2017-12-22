@@ -1,46 +1,48 @@
-# Changes
+# Apache Hadoop docker images
 
-Version 1.1.0 introduces healthchecks for the containers.
+These images are part of the bigdata [docker image series](https://github.com/flokkr). All of the images use the same [base docker image](https://github.com/flokkr/docker-baseimage) which contains advanced configuration loading. 
 
-# Hadoop Docker
+It supports configuration based on environment variables (using specific naming convention), downloaded from consul and other plugins (for example to generate kerberos keystabs).
 
-## Supported Hadoop Versions
-* 2.7.1 with OpenJDK 7
-* 2.7.1 with OpenJDK 8
+For more detailed instruction to configure the images see the [README](https://github.com/flokkr/docker-base/blob/master/README.md) in the flokkr/docker-base repository.
 
-## Description
+## Getting started
 
-To deploy an example HDFS cluster, run:
-```
-  docker-compose up -d --build
-```
+### Run
 
-The configuration parameters can be specified in the hadoop.env file or as environmental variables for specific services (e.g. namenode, datanode etc.):
-```
-  CORE_CONF_fs_defaultFS=hdfs://namenode:8020
-```
+The easiest way to run a storm cluster is just use the included ```docker-compose.yaml``` file. 
 
-CORE_CONF corresponds to core-site.xml. fs_defaultFS=hdfs://namenode:8020 will be transformed into:
+Checkout the repository and do a ```docker-compose up -d``` The storm UI will be available at http://localhost:8080
+
+You can adjust the settings in the compose-config file.
+
+To scale up datanode/namenode:
+
 ```
-  <property><name>fs.defaultFS</name><value>hdfs://namenode:8020</value></property>
-```
-To define dash inside a configuration parameter, use double underscore, such as YARN_CONF_yarn_log___aggregation___enable=true (yarn-site.xml):
-```
-  <property><name>yarn.log-aggregation-enable</name><value>true</value></property>
+docker-compose scale datanode=3
 ```
 
-The available configurations are:
-* /etc/hadoop/core-site.xml CORE_CONF
-* /etc/hadoop/hdfs-site.xml HDFS_CONF
-* /etc/hadoop/yarn-site.xml YARN_CONF
-* /etc/hadoop/httpfs-site.xml HTTPFS_CONF
-* /etc/hadoop/kms-site.xml KMS_CONF
+To check namenode/resourcemanager use the published ports:
 
-If you need to extend some other configuration file, refer to base/entrypoint.sh bash script.
+* Resourcemanager: http://localhost:8080
+* Namenode: http://localhost:50070 (in case of hadoop 2.x)
 
-After starting the example Hadoop cluster, you should be able to access interfaces of all the components (substitute domain names by IP addresses from ```network inspect hadoop``` command):
-* Namenode: http://namenode:50070/dfshealth.html#tab-overview
-* History server: http://historyserver:8188/applicationhistory
-* Datanode: http://datanode:50075/
-* Nodemanager: http://nodemanager:8042/node
-* Resource manager: http://resourcemanager:8088/
+### Smoketest
+
+```
+docker-compose exec resourcemanager /opt/hadoop/bin/yarn jar /opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.1.jar pi 16 1000
+
+### Cluster
+
+For more detailed examples check the other repositories under the flokkr organization with [runtime-](https://github.com/search?q=org%3Aflokkr+runtime) prefix.
+
+There are more detailed examples with using:
+
+* [docker-compose](https://github.com/flokkr/runtime-compose) (single-host)
+* [docker-swarm](https://github.com/flokkr/runtime-swarm)
+* [consul and docker-compose](https://github.com/flokkr/runtime-consul)  (multi-host)
+* [consul and nomad](https://github.com/flokkr/runtime-nomad) (multi-host)
+* [kubernetes](https://github.com/flokkr/runtime-kubernetes)
+
+
+

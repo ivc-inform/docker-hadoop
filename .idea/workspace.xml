@@ -1,58 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a696120-78e1-4621-876b-0737c230891d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Makefile1" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/entrypoint.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/execute-step.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/finish-step.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/mapred-site.xml.template" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/base/wait-for-step.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datanode/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/datanode/run.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docker-compose-local.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docker-compose-nginx.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hadoop.env" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/historyserver/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/historyserver/run.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/misk" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/namenode/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/namenode/run.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nginx/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nginx/bde-hadoop.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nginx/default.conf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nginx/materialize.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nodemanager/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nodemanager/run.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resourcemanager/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resourcemanager/run.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/submit.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/template/maven/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/template/maven/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/submit/template/maven/template.sh" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/compose-config" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hadoop/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hadoop/log4j.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hadoop/url" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hdfs-datanode/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hdfs-namenode/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hdfs-namenode/starter.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/runner/012_namenodeformat/namenodeformat.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/runner/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/runner/baseimage" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/yarn-nodemanager/Dockerfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/yarn-resourcemanager/Dockerfile" afterPath="" />
+    <list default="true" id="9a696120-78e1-4621-876b-0737c230891d" name="Default" comment=".">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Makefile1" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/entrypoint.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/execute-step.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/finish-step.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/mapred-site.xml.template" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/base/wait-for-step.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/datanode/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/datanode/run.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-local.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-nginx.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/hadoop.env" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/historyserver/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/historyserver/run.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/misk" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/namenode/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/namenode/run.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nginx/bde-hadoop.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nginx/default.conf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nginx/materialize.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nodemanager/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/nodemanager/run.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resourcemanager/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resourcemanager/run.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/submit.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/template/maven/Dockerfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/template/maven/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/submit/template/maven/template.sh" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,12 +48,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="120">
-                <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <first_editor relative-caret-position="240">
+                <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -86,11 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="92" lean-forward="true" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
+            <state relative-caret-position="270">
+              <caret line="18" column="59" lean-forward="true" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/base/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -492,7 +487,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="8" width="2560" height="1440" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -508,15 +502,16 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.2557677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1876" y="67" width="635" height="1306" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.2557677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1876" y="67" width="635" height="1306" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="$plus$" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -733,11 +728,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/base/Dockerfile" />
+    <entry file="file://$PROJECT_DIR$/base/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="92" lean-forward="true" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
+        <state relative-caret-position="270">
+          <caret line="18" column="59" lean-forward="true" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -746,8 +748,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <first_editor relative-caret-position="240">
+            <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
             <folding />
           </first_editor>
           <second_editor />

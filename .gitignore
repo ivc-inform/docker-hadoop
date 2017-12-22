@@ -1,3 +1,2 @@
-data/
-.idea/
-.history
+*.retry
+group_vars

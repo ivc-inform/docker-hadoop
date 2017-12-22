@@ -1,18 +1,25 @@
-DOCKER_NETWORK = hadoop
-ENV_FILE = ./hadoop.env
+
+
+VERSION ?= latest
+URL ?= "https://www-eu.apache.org/dist/hadoop/common/hadoop-3.0.0/hadoop-3.0.0.tar.gz"
 
 build:
-	docker build --no-cache -t ivcinform/hadoop-base:1.2.1-hadoop3.0.0-java8 ./base
-	docker build --no-cache -t ivcinform/hadoop-namenode:1.2.1-hadoop3.0.0-java8 ./namenode
-	docker build --no-cache -t ivcinform/hadoop-datanode:1.2.1-hadoop3.0.0-java8 ./datanode
-	docker build --no-cache -t ivcinform/hadoop-nodemanager:1.2.1-hadoop3.0.0-java8 ./nodemanager
-	docker build --no-cache -t ivcinform/hadoop-resourcemanager:1.2.1-hadoop3.0.0-java8 ./resourcemanager
-	docker build --no-cache -t ivcinform/hadoop-historyserver:1.2.1-hadoop3.0.0-java8 ./historyserver
-	
+	echo $(URL) > hadoop/url
+	docker build -t flokkr/hadoop-runner:$(VERSION) runner
+	docker tag flokkr/hadoop-runner:$(VERSION) flokkr/hadoop-runner:build
+	docker build -t flokkr/hadoop:$(VERSION) hadoop
+	docker tag flokkr/hadoop:$(VERSION) flokkr/hadoop:build
+	docker build -t flokkr/hadoop-hdfs-namenode:$(VERSION) hdfs-namenode
+	docker build -t flokkr/hadoop-hdfs-datanode:$(VERSION) hdfs-datanode
+	docker build -t flokkr/hadoop-yarn-resourcemanager:$(VERSION) yarn-resourcemanager
+	docker build -t flokkr/hadoop-yarn-nodemanager:$(VERSION) yarn-nodemanager
+
 deploy:
-	docker push ivcinform/hadoop-base:1.2.1-hadoop3.0.0-java8
- docker push ivcinform/hadoop-namenode:1.2.1-hadoop3.0.0-java8
- docker push ivcinform/hadoop-datanode:1.2.1-hadoop3.0.0-java8
- docker push ivcinform/hadoop-nodemanager:1.2.1-hadoop3.0.0-java8
- docker push ivcinform/hadoop-resourcemanager:1.2.1-hadoop3.0.0-java8
- docker push ivcinform/hadoop-historyserver:1.2.1-hadoop3.0.0-java8
+	docker push flokkr/hadoop-runner:$(VERSION)
+	docker push flokkr/hadoop:$(VERSION)
+	docker push flokkr/hadoop-hdfs-namenode:$(VERSION)
+	docker push flokkr/hadoop-hdfs-datanode:$(VERSION)
+	docker push flokkr/hadoop-yarn-resourcemanager:$(VERSION)
+	docker push flokkr/hadoop-yarn-nodemanager:$(VERSION)
+
+.PHONY: deploy build
