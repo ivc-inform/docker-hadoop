@@ -1,7 +1,7 @@
 version: "2"
 services:
    namenode:
-      image: ivcinform/hadoop-hdfs-namenode:latest
+      image: ivcinform/hadoop-hdfs-namenode:3.0.0
       hostname: namenode
       ports:         
          - 9870:9870
@@ -14,7 +14,7 @@ services:
           on-failure:5
 
    datanode:
-      image: ivcinform/hadoop-hdfs-datanode:latest
+      image: ivcinform/hadoop-hdfs-datanode:3.0.0
       links:
          - namenode
       env_file:
@@ -23,7 +23,7 @@ services:
         on-failure:5
 
    resourcemanager:
-      image: ivcinform/hadoop-yarn-resourcemanager:latest
+      image: ivcinform/hadoop-yarn-resourcemanager:3.0.0
       hostname: resourcemanager
       ports:
          - 8088:8088
@@ -33,7 +33,7 @@ services:
         on-failure:5
 
    nodemanager:
-      image: ivcinform/hadoop-yarn-nodemanager:latest
+      image: ivcinform/hadoop-yarn-nodemanager:3.0.0
       links:
          - resourcemanager
          - namenode
