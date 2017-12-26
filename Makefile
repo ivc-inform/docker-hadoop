@@ -1,6 +1,6 @@
 
 
-VERSION ?= latest
+VERSION ?= 3.0.0
 URL ?= "https://www-eu.apache.org/dist/hadoop/common/hadoop-3.0.0/hadoop-3.0.0.tar.gz"
 
 build:
