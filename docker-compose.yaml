@@ -10,12 +10,18 @@ services:
         - ./compose-config
       environment:
           ENSURE_NAMENODE_DIR: "/tmp/hadoop-hdfs/dfs/name"
+      restart:
+          on-failure:5
+
    datanode:
       image: ivcinform/hadoop-hdfs-datanode:latest
       links:
          - namenode
       env_file:
         - ./compose-config
+      restart:
+        on-failure:5
+
    resourcemanager:
       image: ivcinform/hadoop-yarn-resourcemanager:latest
       hostname: resourcemanager
@@ -23,6 +29,9 @@ services:
          - 8088:8088
       env_file:
         - ./compose-config
+      restart:
+        on-failure:5
+
    nodemanager:
       image: ivcinform/hadoop-yarn-nodemanager:latest
       links:
@@ -30,3 +39,5 @@ services:
          - namenode
       env_file:
         - ./compose-config
+      restart:
+         on-failure:5
